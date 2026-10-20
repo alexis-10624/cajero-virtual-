@@ -1,0 +1,8 @@
+
+## 👥 Distribución de Roles y Trabajo
+
+| Integrante | Rol Principal | Enfoque de Historias de Usuario |
+| --- | --- | --- |
+| *Alexis* | Backend & Lógica Core POO | Lógica de Clases de Cuentas, Herencia, Polimorfismo, Cálculo de Intereses y Sobregiros. |
+| *Juan Pablo* | Seguridad, Autenticación y CRUD | Registro, Login con Intentos/Bloqueo, Seguridad y Administración de Usuarios. |
+| *Edison* | Frontend UI/UX & Tarjeta de Crédito | Diseño Responsivo, Panel de Transacciones, Módulo de Tarjetas y Visualización. |

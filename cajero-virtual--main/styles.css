@@ -1,0 +1,262 @@
+
+:root {
+    --bg-dark: #0b0f19;
+    --card-bg: rgba(22, 31, 49, 0.75);
+    --card-border: rgba(0, 242, 254, 0.2);
+    
+    --primary-neon: #00f2fe;
+    --secondary-neon: #4facfe;
+    --accent-purple: #7f00ff;
+    --accent-pink: #e100ff;
+    --danger-neon: #ff2a6d;
+    --success-neon: #05ffa1;
+    
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(127, 0, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.15) 0px, transparent 50%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   NAVEGACIÓN DE NEÓN
+   ========================================== */
+header {
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#main-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    list-style: none;
+}
+
+#main-nav li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+#main-nav li a:hover {
+    color: var(--primary-neon);
+    background: rgba(0, 242, 254, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+/* ==========================================
+   TARJETAS CON EFECTO CRISTAL (GLASSMORPHISM)
+   ========================================== */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: var(--transition);
+}
+
+.card.wide {
+    max-width: 900px;
+}
+
+.card h1, .card h2 {
+    background: linear-gradient(135deg, var(--primary-neon), var(--accent-pink));
+   -webkit-background-clip: text;
+background-clip: text; 
+-webkit-text-fill-color: transparent;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   INPUTS Y FORMULARIOS FUTURISTAS
+   ========================================== */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-neon);
+    background: rgba(0, 242, 254, 0.05);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+
+/* ==========================================
+   BOTONES CON EFECTO GLOW
+   ========================================== */
+button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--secondary-neon), var(--primary-neon));
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+}
+
+button.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    box-shadow: none;
+}
+
+button.secondary-btn:hover {
+    background: rgba(0, 242, 254, 0.15);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+button.danger {
+    background: transparent;
+    border: 1px solid var(--danger-neon);
+    color: var(--danger-neon);
+    box-shadow: none;
+}
+
+button.danger:hover {
+    background: rgba(255, 42, 109, 0.2);
+    box-shadow: 0 0 20px rgba(255, 42, 109, 0.4);
+}
+
+/* ==========================================
+   GRID DEL DASHBOARD Y TABLAS
+   ========================================== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dashboard-card:hover {
+    border-color: var(--primary-neon);
+    transform: translateY(-5px);
+    background: rgba(0, 242, 254, 0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 242, 254, 0.2);
+}
+
+.dashboard-card h3 {
+    color: var(--primary-neon);
+    margin-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   ALERTAS
+   ========================================== */
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.alert-error {
+    background: rgba(255, 42, 109, 0.15);
+    border: 1px solid var(--danger-neon);
+    color: #ff80a0;
+}
+
+.alert-success {
+    background: rgba(5, 255, 161, 0.15);
+    border: 1px solid var(--success-neon);
+    color: #80ffd0;
+}

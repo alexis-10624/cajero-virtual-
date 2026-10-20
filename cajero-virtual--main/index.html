@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Plata - Financial Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>MI PLATA</h1>
+            <span style="font-size: 0.8rem; color: var(--accent);">FINANCIAL BANK</span>
+        </div>
+        <nav>
+            <ul id="main-nav">
+                <li><a onclick="router('landing')">Inicio</a></li>
+                <li><a onclick="router('login')">Iniciar Sesión</a></li>
+                <li><a onclick="router('register')">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <!-- El contenido dinámico se inyectará aquí mediante JavaScript -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi Plata Financial Bank - Proyecto de Aula CESDE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/app.js"></script>
+</body>
+</html>

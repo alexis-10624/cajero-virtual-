@@ -1,0 +1,148 @@
+## 📜 Historias de Usuario (HU) y Asignación de Tareas
+
+---
+
+### 🟢 Módulo 1: Autenticación, Usuarios y Seguridad
+
+*Responsable principal:* *Juan Pablo*
+
+#### *HU-01: Registro de Nuevos Clientes*
+
+* *Como* cliente nuevo del banco,
+* *Quiero* registrar mis datos personales (Cédula, Nombre, Celular, Usuario, Contraseña y Confirmación de Contraseña),
+* *Para* tener una cuenta registrada en el sistema bancario.
+* *Criterios de Aceptación:*
+* Debe validar que el usuario y la cédula sean únicos.
+* Debe confirmar que la contraseña y su confirmación coincidan.
+
+
+* *Asignado a:* *Juan Pablo*
+
+#### *HU-02: Inicio de Sesión y Control de Intentos (Seguridad)*
+
+* *Como* cliente registrado,
+* *Quiero* iniciar sesión con mi usuario y contraseña,
+* *Para* acceder de forma segura a mi panel de transacciones.
+* *Criterios de Aceptación:*
+* Debe mostrar un contador visible de intentos fallidos.
+* Al tercer intento fallido consecutivo, la cuenta debe quedar *bloqueada* informando al usuario.
+
+
+* *Asignado a:* *Juan Pablo*
+
+#### *HU-03: Administración de Usuarios (CRUD de Clientes)*
+
+* *Como* administrador del sistema,
+* *Quiero* agregar, editar y eliminar usuarios del sistema,
+* *Para* gestionar la base de clientes activos.
+* *Criterios de Aceptación:*
+* Debe requerir confirmación antes de eliminar un usuario.
+* No se debe permitir eliminar la cuenta que tiene la sesión activa.
+
+
+* *Asignado a:* *Juan Pablo*
+
+---
+
+### 🔵 Módulo 2: Cuentas Bancarias y Lógica de Negocio (POO)
+
+*Responsable principal:* *Alexis*
+
+#### *HU-04: Consulta de Saldo y Consignaciones*
+
+* *Como* titular de una cuenta bancaria,
+* *Quiero* consultar mi saldo actual y consignar dinero,
+* *Para* incrementar mis fondos de manera segura.
+* *Criterios de Aceptación:*
+* El monto consignado debe ser estrictamente un valor mayor a cero.
+* Debe actualizar e informar el nuevo saldo al instante.
+
+
+* *Asignado a:* *Alexis*
+
+#### *HU-05: Retiro en Cuenta de Ahorros (Con Interés)*
+
+* *Como* titular de una Cuenta de Ahorros,
+* *Quiero* retirar dinero de mi cuenta,
+* *Para* disponer de mi capital sabiendo que se me retendrá el 1.5% mensual de interés por retiro.
+* *Criterios de Aceptación:*
+* El sistema debe calcular y descontar automáticamente el *1.5% de interés* sobre el monto a retirar.
+* Debe validar que el saldo total alcance para cubrir el retiro más el interés.
+
+
+* *Asignado a:* *Alexis*
+
+#### *HU-06: Retiro en Cuenta Corriente (Con Sobregiro)*
+
+* *Como* titular de una Cuenta Corriente,
+* *Quiero* retirar dinero con opción de sobregiro autorizado,
+* *Para* tener liquidez adicional en mis transacciones diarias.
+* *Criterios de Aceptación:*
+* Permite retirar hasta un *20% adicional (sobregiro)* sobre el saldo disponible actual.
+* Bloquea la transacción si el monto supera el límite del $120\%$ del saldo.
+
+
+* *Asignado a:* *Alexis*
+
+#### *HU-07: Transferencias de Fondos*
+
+* *Como* cliente autenticado,
+* *Quiero* transferir dinero entre mis propios productos o a otros usuarios,
+* *Para* mover recursos financieros rápidamente.
+* *Criterios de Aceptación:*
+* Restringe las transferencias entre el mismo tipo de producto propio (ej. Ahorros a Ahorros del mismo usuario).
+* Valida la existencia del usuario destinatario cuando es a un tercero.
+
+
+* *Asignado a:* *Alexis*
+
+---
+
+### 🟡 Módulo 3: Tarjeta de Crédito, Historial e Interfaz Web
+
+*Responsable principal:* *Edison*
+
+#### *HU-08: Compras a Cuotas con Tarjeta de Crédito*
+
+* *Como* tarjetahabiente,
+* *Quiero* simular compras a cuotas con mi tarjeta de crédito,
+* *Para* calcular las tasas de interés y conocer el valor de mi cuota mensual.
+* *Criterios de Aceptación:*
+* $\le 2$ cuotas: Tasa del 0% (sin interés).
+* 3 a 6 cuotas: Tasa del 1.9% mensual.
+* $\ge 7$ cuotas: Tasa del 2.3% mensual.
+* Muestra en pantalla el valor exacto del pago mensual resultante mediante la fórmula financiera.
+
+
+* *Asignado a:* *Edison*
+
+#### *HU-09: Historial de Movimientos*
+
+* *Como* usuario bancario,
+* *Quiero* visualizar una lista detallada con todas mis transacciones,
+* *Para* auditar mis ingresos, egresos y compras.
+* *Criterios de Aceptación:*
+* Registra Fecha/Hora, Tipo de Transacción y Valor usando arreglos (Array).
+* Muestra el historial ordenado por fecha de forma clara.
+
+
+* *Asignado a:* *Edison*
+
+#### *HU-10: Interfaz Gráfica Responsiva y Coherencia Visual*
+
+* *Como* usuario de la aplicación web,
+* *Quiero* contar con un entorno visual responsivo, moderno y fácil de navegar,
+* *Para* utilizar el sistema cómodamente desde PC, Tablet o Smartphone.
+* *Criterios de Aceptación:*
+* Landing page atractiva, formularios de Login/Registro coherentes y Panel de Transacciones mediante tarjetas (Grid).
+
+
+* *Asignado a:* *Edison*
+
+---
+
+## 📊 Resumen por Integrante
+
+* *Juan Pablo:* HU-01, HU-02, HU-03 (3 Historias)
+* *Alexis:* HU-04, HU-05, HU-06, HU-07 (4 Historias)
+* *Edison:* HU-08, HU-09, HU-10 (3 Historias)
