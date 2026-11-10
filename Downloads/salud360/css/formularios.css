@@ -1,0 +1,90 @@
+/* =========================================================
+   SALUD 360 - Formularios, Inputs, Selects y Pestañas
+   ========================================================= */
+.tabs {
+    display: flex;
+    gap: 6px;
+    padding: 5px;
+    margin-bottom: 26px;
+    background: #eef3f9;
+    border-radius: 14px;
+}
+.tab {
+    flex: 1;
+    border: 0;
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gris);
+    transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.tab:hover { color: var(--tinta); }
+.tab.activa { background: var(--blanco); color: var(--azul-700); box-shadow: 0 2px 8px rgba(15, 34, 55, .1); }
+
+.formulario { display: flex; flex-direction: column; gap: 18px; }
+.campo label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--tinta);
+    margin-bottom: 7px;
+}
+.campo input, .campo select {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--tinta);
+    background: #f8fafd;
+    border: 1.5px solid var(--linea);
+    border-radius: var(--radio-chico);
+    padding: 12px 14px;
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.campo input::placeholder { color: #a3b1c2; }
+.campo input:hover, .campo select:hover { border-color: #c5d3e3; }
+.campo input:focus, .campo select:focus {
+    outline: none;
+    background: var(--blanco);
+    border-color: var(--azul-600);
+    box-shadow: 0 0 0 4px rgba(11, 114, 231, .14);
+}
+.campo select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 38px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7b8e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+.campos-doc { display: grid; grid-template-columns: 1fr 2fr; gap: 14px; }
+
+.subir-archivo {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--gris);
+    padding: 22px;
+    background: var(--azul-50);
+    border: 2px dashed #9cc6f5;
+    border-radius: var(--radio);
+    transition: background-color .2s ease, border-color .2s ease;
+}
+.subir-archivo:hover { background: var(--azul-100); border-color: var(--azul-600); }
+.subir-archivo::file-selector-button {
+    margin-right: 14px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blanco);
+    background: linear-gradient(180deg, var(--azul-500), var(--azul-600));
+    cursor: pointer;
+}
+.archivo-ok { margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--verde); }

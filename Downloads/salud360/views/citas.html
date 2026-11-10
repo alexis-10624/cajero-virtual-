@@ -1,0 +1,22 @@
+<section id="sec-citas" class="seccion tarjeta tarjeta--centrada hidden">
+    <h2 class="tarjeta__titulo">Agendamiento de Cita Médica</h2>
+    <form onsubmit="agendarCita(event)" class="formulario">
+        <div class="campo">
+            <label>Especialidad</label>
+            <select id="especialidad">
+                <option value="Medicina General">Medicina General</option>
+                <option value="Optometría">Optometría</option>
+                <option value="Odontología">Odontología</option>
+            </select>
+        </div>
+        <div class="campo">
+            <label>Fecha y Hora</label>
+            <input type="datetime-local" id="fechaCita" required>
+        </div>
+        <div class="campo">
+            <label>Sede</label>
+            <input type="text" id="sedeCita" required placeholder="Ej. Sede Medellín Centro">
+        </div>
+        <button type="submit" class="btn btn-primario btn-bloque">Confirmar Cita</button>
+    </form>
+</section>

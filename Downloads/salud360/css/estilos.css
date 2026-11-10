@@ -1,0 +1,36 @@
+/* =========================================================
+   SALUD 360 - Archivo Maestro de Estilos
+   ========================================================= */
+@import "variables.css";
+@import "base.css";
+@import "layout.css";
+@import "componentes.css";
+@import "formularios.css";
+@import "sedes.css";
+
+/* Media Queries globales para responsividad */
+@media (max-width: 980px) {
+    .layout { flex-direction: column; gap: 20px; padding-top: 22px; }
+    .menu-lateral { position: static; width: 100%; padding: 14px; }
+    .menu-lateral__titulo { display: none; }
+    .menu-lateral__nav { flex-direction: row; flex-wrap: wrap; }
+    .menu-item { width: auto; padding: 9px 12px; }
+    .menu-item:hover { transform: none; }
+    .menu-item.activo::before { display: none; }
+    .menu-lateral__pie { margin: 0; padding: 0; border: 0; }
+    .rejilla-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .contenedor { padding: 0 16px; }
+    .usuario-cabecera__nombre, .usuario-cabecera .insignia { display: none; }
+    .usuario-cabecera { padding: 10px; }
+    .hero { padding: 34px 24px; border-radius: 22px; }
+    .banner { padding: 26px 22px; }
+    .tarjeta { padding: 24px 20px; }
+    .campos-doc { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}

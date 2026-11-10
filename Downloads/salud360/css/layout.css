@@ -1,0 +1,128 @@
+/* =========================================================
+   SALUD 360 - Layout, Encabezado y Menú Lateral
+   ========================================================= */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--linea);
+}
+.encabezado__interno {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.marca { display: flex; align-items: center; gap: 12px; }
+.marca__sigla {
+    background: linear-gradient(135deg, var(--azul-700), var(--cian));
+    color: var(--blanco);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .04em;
+    padding: 8px 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px -4px rgba(11, 114, 231, .55);
+}
+.marca__nombre {
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--tinta);
+    letter-spacing: -.02em;
+}
+.encabezado__acciones { display: flex; align-items: center; gap: 16px; }
+
+.usuario-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px 6px 14px;
+    background: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+}
+.usuario-cabecera__nombre { font-weight: 600; font-size: 14px; color: var(--tinta); }
+.punto-estado {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--verde);
+    box-shadow: 0 0 0 4px rgba(16, 165, 107, .18);
+}
+
+.layout { display: flex; align-items: flex-start; gap: 28px; padding-top: 32px; padding-bottom: 56px; }
+.contenido { flex: 1; min-width: 0; }
+
+.menu-lateral {
+    width: 270px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 96px;
+    background: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 20px 14px;
+}
+.menu-lateral__titulo {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: #94a3b6;
+    padding: 0 10px;
+    margin-bottom: 12px;
+}
+.menu-lateral__nav { display: flex; flex-direction: column; gap: 4px; }
+.menu-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radio-chico);
+    padding: 11px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto);
+    transition: background-color .15s ease, color .15s ease, transform .15s ease;
+}
+.menu-item:hover { background: #f1f5fa; color: var(--tinta); transform: translateX(2px); }
+.menu-item.activo {
+    background: linear-gradient(90deg, var(--azul-100), var(--azul-50));
+    color: var(--azul-700);
+    font-weight: 700;
+}
+.menu-item.activo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22%;
+    bottom: 22%;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--azul-600);
+}
+.menu-lateral__pie { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--linea); }
+.menu-item--salir { color: var(--rojo); }
+.menu-item--salir:hover { background: var(--rojo-claro); color: var(--rojo); }
+
+.seccion { animation: aparecer .4s ease both; }
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

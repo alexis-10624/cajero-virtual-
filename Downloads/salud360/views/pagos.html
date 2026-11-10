@@ -1,0 +1,18 @@
+<section id="sec-pagos" class="seccion tarjeta hidden">
+    <h2 class="tarjeta__titulo">Pasarela de Pagos PSE</h2>
+    <p class="tarjeta__texto">Selecciona tu entidad bancaria preferida para realizar el pago de tu cuota moderadora por valor de <strong>$4.500 COP</strong>.</p>
+    
+    <div class="formulario">
+        <div class="campo">
+            <label for="select-banco">Selecciona tu Banco</label>
+            <select id="select-banco">
+                <option value="" disabled selected>-- Elige una entidad bancaria --</option>
+                <option value="Bancolombia">Bancolombia</option>
+                <option value="Banco de Bogotá">Banco de Bogotá</option>
+                <option value="Davivienda">Davivienda</option>
+                <option value="Nequi / Daviplata">Nequi / Daviplata</option>
+            </select>
+        </div>
+        <button type="button" onclick="iniciarPagoPasarela()" class="btn btn-primario btn-bloque">Pagar Cuota</button>
+    </div>
+</section>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud 360 - Sistema de Gestión Médica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Header Principal -->
+    <header class="encabezado">
+        <div class="contenedor encabezado__interno">
+            <div class="marca">
+                <span class="marca__sigla">S360</span>
+                <span class="marca__nombre">Salud 360</span>
+            </div>
+
+            <div class="encabezado__acciones">
+                <div id="userInfoHeader" class="usuario-cabecera hidden">
+                    <span class="punto-estado"></span>
+                    <span id="headerUserName" class="usuario-cabecera__nombre"></span>
+                    <span class="insignia insignia--ok">Afiliado Activo</span>
+                </div>
+
+               <button id="btnAuthHeader" onclick="cambiarSeccion('auth')" class="btn btn-primario">
+                    Iniciar Sesión / Registro
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal con Grid para Sidebar y Contenido -->
+    <div class="contenedor layout">
+
+        <!-- Menú Lateral -->
+        <aside id="sidebarNav" class="menu-lateral hidden">
+            <div class="menu-lateral__titulo">Menú Afiliado</div>
+            <nav class="menu-lateral__nav">
+                <button id="nav-dashboard" onclick="cambiarSeccion('dashboard')" class="menu-item activo">📊 Panel (Dashboard)</button>
+                <button id="nav-citas" onclick="cambiarSeccion('citas')" class="menu-item">📅 Agendar Citas</button>
+                <button id="nav-tramites" onclick="cambiarSeccion('tramites')" class="menu-item">📁 Trámites y Órdenes</button>
+                <button id="nav-resultados" onclick="cambiarSeccion('resultados')" class="menu-item">🔬 Resultados Laboratorio</button>
+                <button id="nav-pagos" onclick="cambiarSeccion('pagos')" class="menu-item">💳 Pagos (PSE)</button>
+                <button id="nav-directorio" onclick="cambiarSeccion('directorio')" class="menu-item">🏥 Directorio y Sedes</button>
+                <button id="nav-calificacion" onclick="cambiarSeccion('calificacion')" class="menu-item">⭐ Califica el Servicio</button>
+                <div class="menu-lateral__pie">
+                    <button onclick="cerrarSesion()" class="menu-item menu-item--salir">🚪 Cerrar Sesión</button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Contenedor de Secciones (Cargadas dinámicamente o insertadas) -->
+        <main class="contenido">
+            <div id="vista-home"></div>
+            <div id="vista-auth"></div>
+            <div id="vista-dashboard"></div>
+            <div id="vista-citas"></div>
+            <div id="vista-tramites"></div>
+            <div id="vista-resultados"></div>
+            <div id="vista-pagos"></div>
+            <div id="vista-directorio"></div>
+            <div id="vista-calificacion"></div>
+        </main>
+    </div>
+
+    <!-- Modales -->
+    <div id="modalAlert" class="modal hidden">
+        <div class="modal__caja">
+            <h3 id="modalTitulo" class="modal__titulo"></h3>
+            <p id="modalMensaje" class="modal__mensaje"></p>
+            <button onclick="cerrarModal()" class="btn btn-primario btn-bloque">Aceptar</button>
+        </div>
+    </div>
+
+    <div id="modalConfirmacionPago" class="modal hidden">
+        <div class="modal__caja">
+            <h3 class="modal__titulo">Confirmar Transferencia</h3>
+            <p class="modal__mensaje">¿Deseas confirmar la transferencia de la cuota moderadora desde <strong id="bancoSeleccionadoTxt"></strong>?</p>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="ejecutarPagoFinal()" class="btn btn-exito" style="flex: 1;">Confirmar Pago</button>
+                <button onclick="cerrarModalConfirmacionPago()" class="btn btn-gris" style="flex: 1;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="javascript/autenticacion.js"></script>
+    <script src="javascript/funciones.js"></script>
+    <script src="javascript/principal.js"></script>
+</body>
+</html>

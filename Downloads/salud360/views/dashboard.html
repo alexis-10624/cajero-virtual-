@@ -1,0 +1,30 @@
+<section id="sec-dashboard" class="seccion hidden">
+    <div class="banner">
+        <h2 class="banner__titulo">¡Bienvenido de nuevo, <span id="dashUserName"></span>!</h2>
+        <p class="banner__texto">Estado de Afiliación: <span class="insignia insignia--solida">Afiliado Activo</span></p>
+    </div>
+
+    <div class="rejilla-3">
+        <div class="dato">
+            <div class="dato__etiqueta">Próxima Cita</div>
+            <div id="dashCitaTitulo" class="dato__titulo">No tienes citas activas</div>
+            <p id="dashCitaFecha" class="dato__linea">📅 -</p>
+            <p id="dashCitaSede" class="dato__linea">🏥 -</p>
+            <button id="btnCancelarCita" onclick="confirmarCancelacionCita()" class="btn btn-gris btn-chico hidden" style="margin-top: 10px; color: var(--rojo);">❌ Cancelar Cita</button>
+        </div>
+
+        <div class="dato">
+            <div class="dato__etiqueta">Cuota Moderadora Pendiente</div>
+            <div class="dato__valor">$ 4.500 COP</div>
+            <button onclick="cambiarSeccion('pagos')" class="btn btn-suave btn-chico">Ir a pasarela de pagos</button>
+        </div>
+
+        <div class="dato">
+            <div class="dato__etiqueta">Resultado de Laboratorio / Diagnóstico</div>
+            <div id="dashExamenTitulo" class="dato__titulo">Sin exámenes recientes</div>
+            <p id="dashExamenFecha" class="dato__linea">📅 -</p>
+            <p id="dashExamenOk" class="dato__ok">ℹ️ Agenda una cita para generar resultados</p>
+            <button id="btnVerExamenDashboard" onclick="verResultadoActual()" class="btn btn-gris btn-chico hidden">Ver detalle</button>
+        </div>
+    </div>
+</section>
